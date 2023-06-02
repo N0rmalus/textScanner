@@ -1,8 +1,0 @@
-Puiku, dabar padaryk, kad ši funkcija rašytų duomenis lentelėje ir išrikiuotų nuo daugiausiai panaudoto žodžio iki mažiausiai
-
-for (const auto& pair : wordCounts) {
-    if (pair.second > 1) {
-        count << pair.first << " (" << pair.second << " kartai)" << std::endl;
-    }
-}
-
