@@ -1,6 +1,6 @@
 # textScanner
 
-Programa, skirta nuskaityti teksta ir išrašyti reikiamus duomenis:
+Programa, skirta nuskaityti tekstą ir išrašyti reikiamus duomenis:
 - Žodžių dažnį tekste.
 - Žodžių vietą (eilutės numerį) tekse.
 - Tekste rastus svetainių adresus.
