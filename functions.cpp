@@ -9,13 +9,13 @@ bool isWordCharacter(char c) { // Funkcija skirta patikrinti, ar simbolis yra da
 
 // Funkcija, kuri suranda URL adresus tekste
 vector<string> findURLs(const string& text) {
-    regex urlRegex(R"(https?://\S+|www\.[^\s.]+\.[^\s]+)");
+    regex urlRegex("[(http(s)?):\\/\\/(www\\.)?a-zA-Z0-9@:%._\\+~#=]{2,256}\\.[a-z]{2,6}\\b([-a-zA-Z0-9@:%_\\+.~#?&//=]*)");
     smatch urlMatch;
     vector<string> urls;
 
     string::const_iterator searchStart = text.begin();
     while (regex_search(searchStart, text.end(), urlMatch, urlRegex)) {
-        string url = urlMatch.str();
+        string url = urlMatch.str(0);
 
         // Patikriname, ar URL adresas nėra dokumento arba nuotraukos tipo
         regex extensionRegex(R"(\.(txt|pdf|doc|docx|jpg|tiff|dng|jpeg|png|svg|gif))", std::regex_constants::icase);
@@ -28,6 +28,7 @@ vector<string> findURLs(const string& text) {
 
     return urls;
 }
+
 
 // Funkcija skirta konvertuoti žodį į mažąsias raides ir pašalinti skyrybos ženklus
 string cleanWord(const string& word) {
